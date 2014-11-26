@@ -1,4 +1,4 @@
-Example IPython Notebooks
+Markdown renderings of example IPython Notebooks
 
 [Chapter 1 - Some applications of WAFO](WAFO%20Chapter%201.md)
 
