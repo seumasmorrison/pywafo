@@ -12,6 +12,10 @@ Example 1
 ~~~~~~~~~~
 
 
+    %matplotlib inline
+    import matplotlib.pyplot as plt
+
+
     speed = 'fast'
     #speed = 'slow'
     
@@ -24,34 +28,40 @@ Example 1
     Tcrcr, ix = ts.wave_periods(vh=0, pdef='c2c', wdef='tw', rate=8)
     Tc, ixc = ts.wave_periods(vh=0, pdef='u2d', wdef='tw', rate=8)
 
-
-    ---------------------------------------------------------------------------
-    AssertionError                            Traceback (most recent call last)
-
-    <ipython-input-12-5b70e90102e6> in <module>()
-          8 xx[:,1] = wm.detrendma(xx[:,1],len(xx))
-          9 ts = wo.mat2timeseries(xx)
-    ---> 10 Tcrcr, ix = ts.wave_periods(vh=0, pdef='c2c', wdef='tw', rate=8)
-         11 Tc, ixc = ts.wave_periods(vh=0, pdef='u2d', wdef='tw', rate=8)
+    C:\Anaconda\lib\site-packages\wafo-0.1.2-py2.7.egg\wafo\spectrum\core.py:35: UserWarning: Compile the c_library.pyd again!
+      warnings.warn('Compile the c_library.pyd again!')
+    C:\Anaconda\lib\site-packages\wafo-0.1.2-py2.7.egg\wafo\spectrum\core.py:40: UserWarning: Compile the cov2mod.pyd again!
+      warnings.warn('Compile the cov2mod.pyd again!')
     
 
-    c:\pab\workspace\pywafo_svn\pywafo\src\wafo\objects.pyc in wave_periods(self, vh, pdef, wdef, index, rate)
-       1980             n = ceil(self.data.size * rate)
-       1981             ti = linspace(self.args[0], self.args[-1], n)
-    -> 1982             x = stineman_interp(ti, self.args, self.data)
-       1983         else:
-       1984             x = self.data
-    
 
-    C:\Python27\lib\site-packages\matplotlib\mlab.pyc in stineman_interp(xi, x, y, yp)
-       2932     x=np.asarray(x, np.float_)
-       2933     y=np.asarray(y, np.float_)
-    -> 2934     assert x.shape == y.shape
-       2935 
-       2936     if yp is None:
-    
+    plt.plot(Tc, label='Tc')
+    plt.legend()
 
-    AssertionError: 
+
+
+
+    <matplotlib.legend.Legend at 0x15a63a90>
+
+
+
+
+![png](WAFO%20Chapter%203_files/WAFO%20Chapter%203_3_1.png)
+
+
+
+    plt.plot(ixc, label='ixc')
+    plt.legend()
+
+
+
+
+    <matplotlib.legend.Legend at 0x15a95f98>
+
+
+
+
+![png](WAFO%20Chapter%203_files/WAFO%20Chapter%203_4_1.png)
 
 
 
