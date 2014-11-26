@@ -11,7 +11,6 @@ Section 3.2 Estimation of wave characteristics from data
 Example 1
 ~~~~~~~~~~
 
-
     %matplotlib inline
     import matplotlib.pyplot as plt
 
