@@ -24,6 +24,7 @@ Observed crossings compared to the expected for Gaussian signals
 
     import wafo
     import wafo.objects as wo
+    from matplotlib.pyplot import *
     xx = wafo.data.sea()
     me = xx[:, 1].mean()
     sa = xx[:, 1].std()
@@ -92,7 +93,7 @@ Finding possible spurious points
 ------------------------------------
 However, if the amount of data is too large for visual examinations one could
 use the following criteria to find possible spurious points. One must be careful
-using the criteria for extremevalue analysis, because
+using the criteria for extreme value analysis, because
 it might remove extreme waves that are OK and not spurious.
 
 
