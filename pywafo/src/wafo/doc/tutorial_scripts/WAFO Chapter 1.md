@@ -1,17 +1,17 @@
 
-# CHAPTER 1 demonstrates some applications of WAFO
+# CHAPTER 1 - Demonstrates some applications of WAFO
 
-                CHAPTER1 gives an overview through examples some of the capabilities of WAFO. WAFO is a toolbox of Matlab routines for statistical analysis and simulation of random waves and loads. The commands are edited for fast computation.
-
+Chapter 1 gives an overview through examples some of the capabilities of WAFO. WAFO is a toolbox of Matlab routines for statistical analysis and simulation of random waves and loads. The commands are edited for fast computation.
                 
 ## Section 1.4 Some applications of WAFO
 
 ### Section 1.4.1 Simulation from spectrum, estimation of spectrum 
 
-                Simulation of the sea surface from spectrum. The following code generates 200 seconds of data sampled with 10Hz from the Torsethaugen spectrum.
+Simulation of the sea surface from spectrum. The following code generates 200 seconds of data sampled with 10Hz from the Torsethaugen spectrum.
                 
 
     import wafo.spectrum.models as wsm
+    from matplotlib.pyplot import *
     S = wsm.Torsethaugen(Hm0=6, Tp=8);
     S1 = S.tospecdata()
     S1.plot()
@@ -34,9 +34,7 @@
 
 #### Estimation of spectrum 
 
-                A common situation is that one wants to estimate the spectrum for wave measurements. The following code simulate 20 minutes signal sampled at 4Hz and compare the spectral estimate with the original Torsethaugen spectum.
-
-                
+A common situation is that one wants to estimate the spectrum for wave measurements. The following code simulate 20 minutes signal sampled at 4Hz and compare the spectral estimate with the original Torsethaugen spectum.
 
     clf()
     Fs = 4;  
@@ -51,12 +49,9 @@
 
 ![png](WAFO%20Chapter%201_files/WAFO%20Chapter%201_9_0.png)
 
-
 ### Section 1.4.2 Probability distributions of wave characteristics.
 
-                Probability distribution of wave trough period: WAFO gives the possibility of computing the exact probability distributions for a number of characteristics given a spectral density. In the following example we study the trough period extracted from the time series and compared with the theoretical density computed with exact spectrum, S1, and the estimated spectrum, Sest.
-
-                
+Probability distribution of wave trough period: WAFO gives the possibility of computing the exact probability distributions for a number of characteristics given a spectral density. In the following example we study the trough period extracted from the time series and compared with the theoretical density computed with exact spectrum, S1, and the estimated spectrum, Sest.
 
     clf()
     import wafo.misc as wm
@@ -75,12 +70,10 @@
 
 ![png](WAFO%20Chapter%201_files/WAFO%20Chapter%201_12_0.png)
 
-
 ### Section 1.4.3 Directional spectra
 
-                Here are a few lines of code, which produce directional spectra with frequency independent and frequency dependent spreading.
+Here are a few lines of code, which produce directional spectra with frequency independent and frequency dependent spreading.
                 
-
     clf()
     plotflag = 1
     Nt = 101;   # number of angles
@@ -99,10 +92,9 @@
 
 ![png](WAFO%20Chapter%201_files/WAFO%20Chapter%201_15_0.png)
 
-
 #### 3D Simulation of the sea surface 
 
-                The simulations show that frequency dependent spreading leads to much more irregular surface so the orientation of waves is less transparent compared to the frequency independent case.
+The simulations show that frequency dependent spreading leads to much more irregular surface so the orientation of waves is less transparent compared to the frequency independent case.
                 
 ##### Frequency independent spreading
 
@@ -148,7 +140,8 @@
 
 ### Section 1.4.4 Fatigue, Load cycles and Markov models
 
-                Switching Markow chain of turningpoints.
+Switching Markow chain of turningpoints.
+
 In fatigue applications the exact sample path is not important, but only the tops and bottoms of the load, called the sequence of turning points (TP). From the turning points one can extract load cycles, from which damage calculations and fatigue life predictions can be performed.
 
 The commands below computes the intensity of rainflowcycles for the Gaussian model with spectrum S1 using the Markov approximation. 
@@ -179,19 +172,10 @@ The rainflow cycles found in the simulated load signal are shown in the figure.
     title('Water level')
     ylabel('(m)')
 
-
-
-
     <matplotlib.text.Text at 0x730d070>
-
-
-
-
 ![png](WAFO%20Chapter%201_files/WAFO%20Chapter%201_29_1.png)
 
-
-                Formation of 5 min maxima
-                
+Formation of 5 min maxima
 
     yura = xn[:85500, 1]
     yura = np.reshape(yura, (285, 300)).T
@@ -206,9 +190,7 @@ The rainflow cycles found in the simulated load signal are shown in the figure.
 
 ![png](WAFO%20Chapter%201_files/WAFO%20Chapter%201_31_0.png)
 
-
-                Estimation of GEV for yuramax
-                
+Estimation of GEV for yuramax
 
     clf()
     import wafo.stats as ws
@@ -220,7 +202,4 @@ The rainflow cycles found in the simulated load signal are shown in the figure.
     c:\pab\workspace\pywafo_svn\pywafo\src\wafo\stats\estimation.py:1080: UserWarning: P-value is on the conservative side (i.e. too large) due to ties in the data!
       warnings.warn('P-value is on the conservative side (i.e. too large) due to ties in the data!')
     
-
-
 ![png](WAFO%20Chapter%201_files/WAFO%20Chapter%201_33_1.png)
-
