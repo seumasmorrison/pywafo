@@ -8,7 +8,7 @@ spectral and distributional properties. The presentation is divided into three
 examples:
 
 Example 1 is devoted to estimation of different parameters in the model.
-Example 2 deals with spectral densities and
+Example 2 deals with spectral densities.
 Example 3 presents the use of WAFO to simulate samples of a Gaussian process.
 
 Some of the commands are edited for fast computation.
@@ -19,8 +19,6 @@ Section 2.1 Introduction and preliminary analysis
 Example 1: Sea data
 -------------------
 Observed crossings compared to the expected for Gaussian signals
-
-
 
     import wafo
     import wafo.objects as wo
@@ -36,7 +34,6 @@ Observed crossings compared to the expected for Gaussian signals
     lc = cc.level_crossings()
     lc.plot()
     show()
-
 
 ![png](WAFO%20Chapter%202_files/WAFO%20Chapter%202_1_0.png)
 
