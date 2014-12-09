@@ -1,15 +1,15 @@
 
-CHAPTER2 Modelling random loads and stochastic waves
+CHAPTER 2 - Modelling random loads and stochastic waves
 ====================================================
 
-Chapter2 contains the commands used in Chapter 2 of the tutorial and present
+Chapter 2 contains the commands used in Chapter 2 of the tutorial and present
 some tools for analysis of random functions with respect to their correlation,
 spectral and distributional properties. The presentation is divided into three
 examples:
 
-Example1 is devoted to estimation of different parameters in the model.
-Example2 deals with spectral densities and
-Example3 presents the use of WAFO to simulate samples of a Gaussian process.
+Example 1 is devoted to estimation of different parameters in the model.
+Example 2 deals with spectral densities and
+Example 3 presents the use of WAFO to simulate samples of a Gaussian process.
 
 Some of the commands are edited for fast computation.
 
